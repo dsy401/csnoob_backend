@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const coursesSchema = mongoose.Schema({
+const courseSchema = mongoose.Schema({
     _id: Number,
     code: {type:String,required:true,unique:true},
     name: {type: String, required: true},
@@ -10,4 +10,4 @@ const coursesSchema = mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('courses', coursesSchema)
+module.exports = mongoose.model('course', courseSchema,'course')

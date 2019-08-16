@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 //import routes
-const coursesRoutes = require('./api/routes/courses')
+const courseRoutes = require('./api/routes/course')
 
 const app = express();
 
@@ -40,7 +40,7 @@ app.use((req,res,next)=>{
 })
 
 //routes
-app.use('/courses',coursesRoutes);
+app.use('/course',courseRoutes);
 
 
 module.exports = app;
