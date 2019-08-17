@@ -9,6 +9,8 @@ const result = require('./api/models/result')
 
 //import routes
 const courseRoutes = require('./api/routes/course')
+const ratingRoutes = require('./api/routes/rating')
+//
 
 const app = express();
 
@@ -44,6 +46,8 @@ app.use((req,res,next)=>{
 
 //routes
 app.use('/course',courseRoutes);
+app.use('/rating',ratingRoutes)
+//
 
 app.use((req,res,next)=>{
     const error = new Error("Not Found");
