@@ -1,23 +1,19 @@
 const mongoose = require('mongoose');
 const course = require('../models/course');
+const result = require('../models/result')
 
-
-exports.courses_get_all = (req,res,next) =>{
+exports.course_get_all = (req,res,next) =>{
+    result.reset()
     course.find().exec()
         .then(docs=>{
-            res.status(200).json(docs)
-        }).catch(err=>{
-        res.status(500).json(err);
+            result.Data = docs
+            res.status(200).json(result)
+        })
+        .catch(err=>{
+            result.IsSuccess = false
+            result.ErrorMessage = err
+            res.status(500).json(result);
     });
-};
-
-exports.courses_get_one_by_id = (req,res,next) =>{
-    const id = req.params.id;
-    course.find({schoolId:id}).exec().then(docs=>{
-        res.status(200).json(docs)
-    }).catch(err=>{
-        res.status(500).json(err);
-    })
 };
 
 

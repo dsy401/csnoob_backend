@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 
+//import result model
+const result = require('./api/models/result')
+
 //import routes
 const courseRoutes = require('./api/routes/course')
 
@@ -49,12 +52,11 @@ app.use((req,res,next)=>{
 })
 
 app.use((error,req,res,next)=>{
+    result.reset()
+    result.IsSuccess = false;
+    result.ErrorMessage = error.message;
     res.status(error.status || 500);
-    res.json({
-        error: {
-            message: error.message
-        }
-    })
+    res.json(result)
 })
 
 module.exports = app;
