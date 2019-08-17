@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const path = require('path')
 
 //import result model
 const result = require('./api/models/result')
@@ -10,6 +11,7 @@ const result = require('./api/models/result')
 //import routes
 const courseRoutes = require('./api/routes/course')
 const ratingRoutes = require('./api/routes/rating')
+const courseReviewRoutes = require('./api/routes/courseReview')
 //
 
 const app = express();
@@ -44,9 +46,15 @@ app.use((req,res,next)=>{
     next();
 })
 
+
+//static serve files
+app.use('/files',express.static(path.join(__dirname,'files')))
+
+
 //routes
 app.use('/course',courseRoutes);
-app.use('/rating',ratingRoutes)
+app.use('/rating',ratingRoutes);
+app.use('/courseReview',courseReviewRoutes);
 //
 
 app.use((req,res,next)=>{

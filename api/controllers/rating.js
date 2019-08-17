@@ -9,7 +9,9 @@ exports.comment_course_by_courseId = (req,res,next)=>{
         comment: req.body.comment,
         rate: req.body.rate,
         grade: req.body.grade,
-        courseId: req.body.courseId
+        courseId: req.body.courseId,
+        semester: req.body.semester,
+        year: req.body.year
     })
 
     ratingModel.save()
@@ -31,7 +33,7 @@ exports.get_comment_by_courseId = (req,res,next)=>{
     rating.find({'courseId':courseId}).exec()
         .then(doc=>{
             result.Data = doc.map(s=>{
-                return {_id:s._id,comment:s.comment,rate:s.rate,grade:s.grade}
+                return {_id:s._id,comment:s.comment,rate:s.rate,grade:s.grade,year:s.year,semester:s.semester}
             })
             res.status(200).json(result);
         })
