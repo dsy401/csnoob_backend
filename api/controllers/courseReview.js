@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const courseReview = require('../models/courseReview');
-const result = require('../models/result')
+const {Result} = require('../models/result')
 
 
 exports.get_course_review_by_courseId = (req,res,next)=>{
-    result.reset();
+    const result = new Result()
     const courseId = req.params.courseId;
     courseReview.find({'courseId':courseId}).exec()
         .then(doc=>{

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const course = require('../models/course');
-const result = require('../models/result')
+const {Result} = require('../models/result')
 
 exports.course_get_all = (req,res,next) =>{
-    result.reset()
+    const result = new Result()
     course.find().exec()
         .then(docs=>{
             result.Data = docs

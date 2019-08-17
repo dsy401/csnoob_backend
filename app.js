@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const path = require('path')
 
 //import result model
-const result = require('./api/models/result')
+const {Result} = require('./api/models/result')
 
 //import routes
 const courseRoutes = require('./api/routes/course')
@@ -64,7 +64,7 @@ app.use((req,res,next)=>{
 })
 
 app.use((error,req,res,next)=>{
-    result.reset()
+    const result = new Result()
     result.IsSuccess = false;
     result.ErrorMessage = error.message;
     res.status(error.status || 500);

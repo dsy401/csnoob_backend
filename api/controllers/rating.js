@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const rating = require('../models/rating');
-const result = require('../models/result')
+const {Result} = require('../models/result')
 
 exports.comment_course_by_courseId = (req,res,next)=>{
-    result.reset()
+    const result = new Result()
     const ratingModel = new rating({
         _id: new mongoose.Types.ObjectId(),
         comment: req.body.comment,
@@ -28,7 +28,7 @@ exports.comment_course_by_courseId = (req,res,next)=>{
 
 
 exports.get_comment_by_courseId = (req,res,next)=>{
-    result.reset()
+    const result = new Result()
     const courseId = req.params.courseId
     rating.find({'courseId':courseId}).exec()
         .then(doc=>{
