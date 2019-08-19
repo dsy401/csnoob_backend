@@ -5,7 +5,7 @@ const courseSchema = mongoose.Schema({
     code: {type:String,required:true,unique:true},
     name: {type: String, required: true},
     description: {type: String, required: true},
-    schoolId: {type: Number, required: true},
+    school: {type: Number, required: true},
     type: {type: Number, required: true} //0 is undergraduate, 1 is postgraduate
 })
 
