@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-const rating = require('../models/rating');
+const courseRating = require('../models/courseRating');
 const {Result} = require('../models/result')
-
 exports.comment_course_by_courseId = (req,res,next)=>{
     const result = new Result()
-    const ratingModel = new rating({
+    const courseRatingModel = new courseRating({
         _id: new mongoose.Types.ObjectId(),
         comment: req.body.comment,
         rate: req.body.rate,
@@ -14,7 +13,7 @@ exports.comment_course_by_courseId = (req,res,next)=>{
         year: req.body.year
     })
 
-    ratingModel.save()
+    courseRatingModel.save()
         .then(doc=>{
             result.Data = "comment successfully."
             res.status(201).json(result)
@@ -30,7 +29,7 @@ exports.comment_course_by_courseId = (req,res,next)=>{
 exports.get_comment_by_courseId = (req,res,next)=>{
     const result = new Result()
     const courseId = req.params.courseId
-    rating.find({'courseId':courseId}).exec()
+    courseRating.find({'courseId':courseId}).exec()
         .then(doc=>{
             result.Data = doc.map(s=>{
                 return {_id:s._id,comment:s.comment,rate:s.rate,grade:s.grade,year:s.year,semester:s.semester}

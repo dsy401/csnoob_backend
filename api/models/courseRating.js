@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ratingSchema = mongoose.Schema({
+const courseRatingSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     comment: {type: String, required: true},
     rate: {type:Number,required:true},
@@ -11,4 +11,4 @@ const ratingSchema = mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('rating', ratingSchema,'rating')
+module.exports = mongoose.model('courseRating', courseRatingSchema,'courseRating')

@@ -10,8 +10,10 @@ const {Result} = require('./api/models/result')
 
 //import routes
 const courseRoutes = require('./api/routes/course')
-const ratingRoutes = require('./api/routes/rating')
+const CourseRatingRoutes = require('./api/routes/courseRating')
 const courseReviewRoutes = require('./api/routes/courseReview')
+const teacherRoutes = require('./api/routes/teacher')
+const teacherRatingRoutes = require('./api/routes/teacherRating')
 //
 
 const app = express();
@@ -52,9 +54,16 @@ app.use('/files',express.static(path.join(__dirname,'files')))
 
 
 //routes
-app.use('/course',courseRoutes);
-app.use('/rating',ratingRoutes);
-app.use('/courseReview',courseReviewRoutes);
+const router = express.Router();
+router.use('/course',courseRoutes);
+router.use('/courseRating',CourseRatingRoutes);
+router.use('/courseReview',courseReviewRoutes);
+router.use('/teacher',teacherRoutes);
+router.use('/teacherRating',teacherRatingRoutes);
+//
+
+//combine all routes
+app.use('/api',router)
 //
 
 app.use((req,res,next)=>{
