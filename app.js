@@ -20,9 +20,7 @@ const app = express();
 
 //connect database
 mongoose.connect(
-    'mongodb+srv://dsy401:'
-    + process.env.MONGO_ATLAS_PW +
-    '@csnoob-jouvh.mongodb.net/csnoob?retryWrites=true&w=majority',
+    'mongodb+srv://dsy401:dyfi6yth@csnoob-jouvh.mongodb.net/csnoob?retryWrites=true&w=majority',
     { useNewUrlParser: true,useFindAndModify: false,useCreateIndex: true}
 );
 
