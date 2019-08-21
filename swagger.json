@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "CSNOOB API DOCUMENT",
+    "description": "There are all api for csnoob"
+  },
+  "host": "35.244.113.148:3000",
+  "basePath": "/api/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/course": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/courseRating": {
+      "post": {}
+    },
+    "/courseRating/{courseId}": {
+      "get": {}
+    },
+    "/courseReview/{courseId}": {
+      "get": {}
+    },
+    "teacher": {
+      "get": {}
+    },
+    "teacherRating/{teacherId}": {
+      "get": {}
+    },
+    "teacherRating":{
+      "post":{}
+    }
+
+  }
+}

@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger')
 
 //import result model
 const {Result} = require('./api/models/result')
@@ -63,6 +65,7 @@ router.use('/teacherRating',teacherRatingRoutes);
 //combine all routes
 app.use('/api',router)
 //
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument))
 
 app.use((req,res,next)=>{
     const error = new Error("Not Found");
