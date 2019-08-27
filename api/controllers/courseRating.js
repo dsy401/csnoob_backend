@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const courseRating = require('../models/courseRating');
 const {Result} = require('../models/result')
+
 exports.comment_course_by_courseId = (req,res,next)=>{
     const result = new Result()
     const courseRatingModel = new courseRating({
@@ -42,3 +43,4 @@ exports.get_comment_by_courseId = (req,res,next)=>{
             res.status(500).json(result)
         })
 }
+

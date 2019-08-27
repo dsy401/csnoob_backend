@@ -35,13 +35,16 @@
     "/courseReview/{courseId}": {
       "get": {}
     },
-    "teacher": {
+    "/teacher": {
       "get": {}
     },
-    "teacherRating/{teacherId}": {
+    "/teacher/{name}": {
       "get": {}
     },
-    "teacherRating":{
+    "/teacherRating/{teacherId}": {
+      "get": {}
+    },
+    "/teacherRating":{
       "post":{}
     }
 
