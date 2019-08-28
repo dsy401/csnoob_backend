@@ -7,6 +7,7 @@ exports.comment_course_by_courseId = (req,res,next)=>{
     const courseRatingModel = new courseRating({
         _id: new mongoose.Types.ObjectId(),
         comment: req.body.comment,
+        name: req.body.name,
         rate: req.body.rate,
         grade: req.body.grade,
         courseId: req.body.courseId,
@@ -33,7 +34,7 @@ exports.get_comment_by_courseId = (req,res,next)=>{
     courseRating.find({'courseId':courseId}).exec()
         .then(doc=>{
             result.Data = doc.map(s=>{
-                return {_id:s._id,comment:s.comment,rate:s.rate,grade:s.grade,year:s.year,semester:s.semester}
+                return {_id:s._id,comment:s.comment,name:s.name,rate:s.rate,grade:s.grade,year:s.year,semester:s.semester}
             })
             res.status(200).json(result);
         })
