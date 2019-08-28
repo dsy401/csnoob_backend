@@ -3,20 +3,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const path = require('path')
-const swaggerUi = require('swagger-ui-express')
+const path = require('path');
+const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger')
 
 //import result model
-const {Result} = require('./api/models/result')
+const {Result} = require('./api/models/result');
 
 //import routes
-const courseRoutes = require('./api/routes/course')
-const CourseRatingRoutes = require('./api/routes/courseRating')
-const courseReviewRoutes = require('./api/routes/courseReview')
-const teacherRoutes = require('./api/routes/teacher')
-const teacherRatingRoutes = require('./api/routes/teacherRating')
+const courseRoutes = require('./api/routes/course');
+const CourseRatingRoutes = require('./api/routes/courseRating');
+const courseReviewRoutes = require('./api/routes/courseReview');
+const teacherRoutes = require('./api/routes/teacher');
+const teacherRatingRoutes = require('./api/routes/teacherRating');
 const forumRoutes = require('./api/routes/forum');
+const threadRoutes = require('./api/routes/thread');
 //
 
 const app = express();
@@ -62,6 +63,7 @@ router.use('/courseReview',courseReviewRoutes);
 router.use('/teacher',teacherRoutes);
 router.use('/teacherRating',teacherRatingRoutes);
 router.use('/forum',forumRoutes);
+router.use('/thread',threadRoutes)
 //
 
 //combine all routes
