@@ -1,13 +1,34 @@
 const mongoose = require('mongoose');
 const teacher = require('../models/teacher');
 const {Result} = require('../models/result')
+const {rateCounter} = require('../../util/rateCounter')
 
 exports.get_all_teacher = (req,res,next)=>{
     const result = new Result()
-    teacher.find().populate('courses')
+    teacher
+        .aggregate([
+            {
+                $lookup: {
+                    from: 'teacherRating',
+                    localField: '_id',
+                    foreignField: 'teacherId',
+                    as: 'rates'
+                },
+            },
+            {
+                $lookup: {
+                    from: 'course',
+                    localField: 'courses',
+                    foreignField: '_id',
+                    as: 'courses'
+                }
+            }
+        ])
         .exec()
         .then(doc=>{
-            result.Data = doc;
+            result.Data = doc.map(s=>{
+                return {_id:s._id,name:s.name,title:s.title,courses:s.courses,school:s.school,rate: rateCounter(s.rates)}
+            });
             res.status(200).json(result)
         })
         .catch(err=>{
@@ -20,16 +41,37 @@ exports.get_all_teacher = (req,res,next)=>{
 exports.get_teachers_by_name = (req,res,next) => {
     const result = new Result()
     teacher
-        .find({
-            'name':{
-                $regex: req.params.name,
-                $options: "i"
+        .aggregate([
+            {
+                $lookup: {
+                    from: 'teacherRating',
+                    localField: '_id',
+                    foreignField: 'teacherId',
+                    as: 'rates'
+                },
+            },
+            {
+                $lookup: {
+                    from: 'course',
+                    localField: 'courses',
+                    foreignField: '_id',
+                    as: 'courses'
+                }
+            },
+            {
+                $match: {
+                    "name":{
+                        $regex: req.params.name,
+                        $options: "i"
+                    }
+                }
             }
-        })
-        .populate('courses')
+        ])
         .exec()
         .then(doc=>{
-            result.Data = doc;
+            result.Data = doc.map(s=>{
+                return {_id:s._id,name:s.name,title:s.title,courses:s.courses,school:s.school,rate: rateCounter(s.rates)}
+            });
             res.status(200).json(result)
         })
         .catch(err=>{
