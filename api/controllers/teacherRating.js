@@ -33,7 +33,7 @@ exports.get_comment_by_teacherId_by_PageNum = async (req,res,next)=>{
     }
     const teacherId = req.params.teacherId;
 
-    const total = await teacherRating.count({'teacherId':teacherId});
+    const total = await teacherRating.countDocuments({'teacherId':teacherId});
 
     const totalPageNum = await Math.floor(total/10) + 1
 

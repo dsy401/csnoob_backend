@@ -17,7 +17,7 @@ exports.comment_course_by_courseId = (req,res,next)=>{
 
     courseRatingModel.save()
         .then(doc=>{
-            result.Data = "comment successfully."
+            result.Data = "comment successfully.";
             res.status(201).json(result)
         })
         .catch(err=>{
@@ -28,14 +28,30 @@ exports.comment_course_by_courseId = (req,res,next)=>{
 }
 
 
-exports.get_comment_by_courseId = (req,res,next)=>{
+exports.get_comment_by_courseId_by_PageNum = async (req,res,next)=>{
     const result = new Result()
+    const pageNum = Number(req.params.PageNum)
+    if (isNaN(pageNum) == true || pageNum <= 0){
+        result.IsSuccess =false;
+        result.ErrorMessage = "Page number is not a integer or zero or negative integer"
+        return res.status(200).json(result);
+    }
     const courseId = req.params.courseId
-    courseRating.find({'courseId':courseId}).exec()
+
+    const total = await courseRating.countDocuments({'courseId':courseId})
+
+    const totalPageNum = await Math.floor(total/10) + 1;
+
+    courseRating
+        .find({'courseId':courseId})
+        .limit(10)
+        .skip((pageNum-1)*10)
+        .exec()
         .then(doc=>{
-            result.Data = doc.map(s=>{
+            const details = doc.map(s=>{
                 return {_id:s._id,comment:s.comment,name:s.name,rate:s.rate,grade:s.grade,year:s.year,semester:s.semester}
             })
+            result.Data = {total: totalPageNum,currentPage:pageNum,details:details}
             res.status(200).json(result);
         })
         .catch(err=>{

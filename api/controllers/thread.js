@@ -12,7 +12,7 @@ exports.get_all_threads_by_forumId_by_pageNum = async (req,res,next) =>{
         return res.status(200).json(result);
     }
     const total = await thread
-        .count({'forumId':req.params.forumId})
+        .countDocuments({'forumId':req.params.forumId})
 
     const totalPageNum = await Math.floor(total/10) + 1
     thread
