@@ -35,15 +35,13 @@ exports.get_comment_by_teacherId_by_PageNum = async (req,res,next)=>{
 
     const total = await teacherRating.countDocuments({'teacherId':teacherId});
 
-    const totalPageNum = await Math.floor(total/10) + 1
-
     teacherRating
         .find({'teacherId':teacherId})
         .limit(10)
         .skip((pageNum-1)*10)
         .exec()
         .then(doc=>{
-            result.Data = {total: totalPageNum,currentPage:pageNum,details:doc}
+            result.Data = {total: total,details:doc}
             res.status(200).json(result);
         })
         .catch(err=>{

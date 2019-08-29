@@ -40,8 +40,6 @@ exports.get_comment_by_courseId_by_PageNum = async (req,res,next)=>{
 
     const total = await courseRating.countDocuments({'courseId':courseId})
 
-    const totalPageNum = await Math.floor(total/10) + 1;
-
     courseRating
         .find({'courseId':courseId})
         .limit(10)
@@ -51,7 +49,7 @@ exports.get_comment_by_courseId_by_PageNum = async (req,res,next)=>{
             const details = doc.map(s=>{
                 return {_id:s._id,comment:s.comment,name:s.name,rate:s.rate,grade:s.grade,year:s.year,semester:s.semester}
             })
-            result.Data = {total: totalPageNum,currentPage:pageNum,details:details}
+            result.Data = {total: total,details:details}
             res.status(200).json(result);
         })
         .catch(err=>{
