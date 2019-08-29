@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const thread = require('../models/thread')
 const {Result} = require('../models/result')
 
-exports.get_all_threads_by_forumId = async (req,res,next) =>{
+//分页
+exports.get_all_threads_by_forumId_by_pageNum = async (req,res,next) =>{
     const result = new Result();
     const pageNum = Number(req.params.PageNum)
     if (isNaN(pageNum) == true || pageNum <= 0){

@@ -23,14 +23,27 @@ exports.comment_teacher_by_teacherId = (req,res,next)=>{
         })
 };
 
-exports.get_comment_by_teacherId = (req,res,next)=>{
+exports.get_comment_by_teacherId_by_PageNum = async (req,res,next)=>{
     const result = new Result();
+    const pageNum = Number(req.params.PageNum)
+    if (isNaN(pageNum) == true || pageNum <= 0){
+        result.IsSuccess =false;
+        result.ErrorMessage = "Page number is not a integer or zero or negative integer"
+        return res.status(200).json(result);
+    }
     const teacherId = req.params.teacherId;
-    teacherRating.find({'teacherId':teacherId}).exec()
+
+    const total = await teacherRating.count({'teacherId':teacherId});
+
+    const totalPageNum = await Math.floor(total/10) + 1
+
+    teacherRating
+        .find({'teacherId':teacherId})
+        .limit(10)
+        .skip((pageNum-1)*10)
+        .exec()
         .then(doc=>{
-            result.Data = doc.map(s=>{
-                return {_id:s._id,comment:s.comment,rate:s.rate}
-            });
+            result.Data = {total: totalPageNum,currentPage:pageNum,details:doc}
             res.status(200).json(result);
         })
         .catch(err=>{
@@ -38,4 +51,4 @@ exports.get_comment_by_teacherId = (req,res,next)=>{
             result.ErrorMessage = err;
             res.status(500).json(result)
         })
-}
+};
