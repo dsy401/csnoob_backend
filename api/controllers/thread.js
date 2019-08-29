@@ -30,3 +30,26 @@ exports.get_all_threads_by_forumId_by_pageNum = async (req,res,next) =>{
             res.status(500).json(result)
         })
 };
+
+
+exports.post_one_thread = (req,res,next)=>{
+    const result = new Result();
+    const threadModel = new thread({
+        _id: new mongoose.Types.ObjectId(),
+        author: req.body.author,
+        title: req.body.title,
+        content: req.body.content,
+        forumId: req.body.forumId
+    });
+
+    threadModel.save()
+        .then(doc=>{
+            result.Data = "comment successfully.";
+            res.status(201).json(result)
+        })
+        .catch(err=>{
+            result.IsSuccess = false;
+            result.ErrorMessage = err;
+            res.status(500).json(result)
+        })
+}
