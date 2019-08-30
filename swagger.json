@@ -29,7 +29,7 @@
     "/courseRating": {
       "post": {}
     },
-    "/courseRating/{courseId}": {
+    "/courseRating/{courseId}/{pageNum}": {
       "get": {}
     },
     "/courseReview/{courseId}": {
@@ -41,13 +41,16 @@
     "/teacher/{name}": {
       "get": {}
     },
-    "/teacherRating/{teacherId}": {
+    "/teacherRating/{teacherId}/{pageNum}": {
       "get": {}
     },
     "/teacherRating":{
       "post":{}
     },
-    "/thread/{forumId}": {
+    "/thread/{forumId}/{pageNum}": {
+      "get": {}
+    },
+    "/getCourseByCourseId/{courseId}": {
       "get": {}
     }
 
