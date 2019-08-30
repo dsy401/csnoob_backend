@@ -50,7 +50,7 @@
     "/thread/{forumId}/{pageNum}": {
       "get": {}
     },
-    "/getCourseByCourseId/{courseId}": {
+    "course/getCourseByCourseId/{courseId}": {
       "get": {}
     }
 
