@@ -54,3 +54,18 @@ exports.post_one_thread = (req,res,next)=>{
             res.status(500).json(result)
         })
 };
+
+exports.get_one_thread_by_thread_id = (req,res,next) =>{
+    const result = new Result();
+    thread.findOne({"_id":req.params.threadId})
+        .exec()
+        .then(doc=>{
+            result.Data = doc;
+            res.status(200).json(result)
+        })
+        .catch(err=>{
+            result.IsSuccess = false;
+            result.ErrorMessage = err;
+            res.status(500).json(result)
+        })
+}
