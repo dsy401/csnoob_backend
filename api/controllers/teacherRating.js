@@ -38,6 +38,7 @@ exports.get_comment_by_teacherId_by_PageNum = async (req,res,next)=>{
 
     teacherRating
         .find({'teacherId':teacherId})
+        .sort({'_id':-1})
         .limit(10)
         .skip((pageNum-1)*10)
         .exec()

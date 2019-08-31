@@ -42,6 +42,7 @@ exports.get_comment_by_courseId_by_PageNum = async (req,res,next)=>{
 
     courseRating
         .find({'courseId':courseId})
+        .sort({'_id':-1})
         .limit(10)
         .skip((pageNum-1)*10)
         .exec()

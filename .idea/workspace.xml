@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3eb85e4d-276e-4a8e-9917-77e1e608fe9f" name="Default Changelist" comment="" />
+    <list default="true" id="3eb85e4d-276e-4a8e-9917-77e1e608fe9f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/courseRating.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/courseRating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/teacherRating.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/teacherRating.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,10 +18,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/controllers/thread.js">
+        <entry file="file://$PROJECT_DIR$/api/controllers/courseRating.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="375">
+              <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -74,17 +78,17 @@
         <option value="$PROJECT_DIR$/api/controllers/teacher.js" />
         <option value="$PROJECT_DIR$/api/routes/teacherRating.js" />
         <option value="$PROJECT_DIR$/api/routes/courseRating.js" />
-        <option value="$PROJECT_DIR$/api/controllers/courseRating.js" />
         <option value="$PROJECT_DIR$/api/models/thread.js" />
         <option value="$PROJECT_DIR$/api/routes/thread.js" />
-        <option value="$PROJECT_DIR$/api/controllers/thread.js" />
         <option value="$PROJECT_DIR$/api/routes/forum.js" />
         <option value="$PROJECT_DIR$/api/controllers/forum.js" />
         <option value="$PROJECT_DIR$/api/routes/course.js" />
         <option value="$PROJECT_DIR$/api/controllers/course.js" />
         <option value="$PROJECT_DIR$/swagger.json" />
-        <option value="$PROJECT_DIR$/api/controllers/teacherRating.js" />
         <option value="$PROJECT_DIR$/api/models/teacherRating.js" />
+        <option value="$PROJECT_DIR$/api/controllers/thread.js" />
+        <option value="$PROJECT_DIR$/api/controllers/teacherRating.js" />
+        <option value="$PROJECT_DIR$/api/controllers/courseRating.js" />
       </list>
     </option>
   </component>
@@ -212,14 +216,16 @@
       <workItem from="1567076907312" duration="505000" />
       <workItem from="1567171637786" duration="1399000" />
       <workItem from="1567218338507" duration="4932000" />
+      <workItem from="1567230329942" duration="108000" />
+      <workItem from="1567249377777" duration="47000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64551000" />
+    <option name="totallyTimeSpent" value="64706000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2026" y="65" width="1680" height="952" extended-state="0" />
+    <frame x="1920" y="65" width="1680" height="952" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22222222" />
@@ -438,24 +444,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/courseRating.js">
+    <entry file="file://$PROJECT_DIR$/api/controllers/thread.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        <state relative-caret-position="285">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/teacherRating.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="338">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/thread.js">
+    <entry file="file://$PROJECT_DIR$/api/controllers/courseRating.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="375">
+          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
         </state>
       </provider>
     </entry>
