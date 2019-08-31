@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3eb85e4d-276e-4a8e-9917-77e1e608fe9f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/forum.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/forum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/thread.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/thread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/forum.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/forum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/course.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/course.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,10 +17,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/controllers/forum.js">
+        <entry file="file://$PROJECT_DIR$/api/controllers/course.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+            <state relative-caret-position="393">
+              <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/course.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -93,12 +100,12 @@
         <option value="$PROJECT_DIR$/api/controllers/courseRating.js" />
         <option value="$PROJECT_DIR$/api/models/thread.js" />
         <option value="$PROJECT_DIR$/api/routes/thread.js" />
-        <option value="$PROJECT_DIR$/api/routes/course.js" />
-        <option value="$PROJECT_DIR$/api/controllers/course.js" />
         <option value="$PROJECT_DIR$/swagger.json" />
         <option value="$PROJECT_DIR$/api/controllers/thread.js" />
         <option value="$PROJECT_DIR$/api/routes/forum.js" />
         <option value="$PROJECT_DIR$/api/controllers/forum.js" />
+        <option value="$PROJECT_DIR$/api/routes/course.js" />
+        <option value="$PROJECT_DIR$/api/controllers/course.js" />
       </list>
     </option>
   </component>
@@ -231,12 +238,12 @@
       <workItem from="1567076493123" duration="260000" />
       <workItem from="1567076907312" duration="505000" />
       <workItem from="1567171637786" duration="1399000" />
-      <workItem from="1567218338507" duration="238000" />
+      <workItem from="1567218338507" duration="1184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59857000" />
+    <option name="totallyTimeSpent" value="60803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1860" y="23" width="1680" height="952" extended-state="0" />
@@ -289,13 +296,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy.yaml" />
-    <entry file="file://$PROJECT_DIR$/api/models/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/fs/package.json" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -395,13 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/courseRating.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -444,13 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/controllers/course.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="25" lean-forward="true" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/teacher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -472,10 +458,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/controllers/forum.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        <state relative-caret-position="270">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/controllers/course.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
         </state>
       </provider>
     </entry>
