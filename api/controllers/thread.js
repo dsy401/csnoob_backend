@@ -52,4 +52,4 @@ exports.post_one_thread = (req,res,next)=>{
             result.ErrorMessage = err;
             res.status(500).json(result)
         })
-}
+};

@@ -26,3 +26,19 @@ exports.get_all_forum = (req,res,next) =>{
             res.status(500).json(result)
         })
 };
+
+exports.get_forum_by_forumId = (req,res,next) =>{
+    const result = new Result();
+    forum.findOne({"_id":req.params.forumId})
+        .exec()
+        .then(doc=>{
+            result.Data = doc;
+            res.status(200).json(result)
+        })
+        .catch(err=>{
+            result.IsSuccess =false;
+            result.ErrorMessage = err;
+            res.status(500).json(result)
+        })
+
+}
