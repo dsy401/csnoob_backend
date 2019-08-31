@@ -17,6 +17,7 @@ exports.get_all_threads_by_forumId_by_pageNum = async (req,res,next) =>{
     const totalPageNum = await Math.floor(total/10) + 1
     thread
         .find({'forumId':req.params.forumId})
+        .sort({'_id':-1})
         .limit(10)
         .skip((pageNum-1)*10)
         .exec()
