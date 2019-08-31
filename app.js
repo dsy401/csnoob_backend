@@ -18,6 +18,8 @@ const teacherRoutes = require('./api/routes/teacher');
 const teacherRatingRoutes = require('./api/routes/teacherRating');
 const forumRoutes = require('./api/routes/forum');
 const threadRoutes = require('./api/routes/thread');
+const threadCommentRoutes = require('./api/routes/threadComment');
+const generalRoutes = require('./api/routes/general')
 //
 
 const app = express();
@@ -64,6 +66,8 @@ router.use('/teacher',teacherRoutes);
 router.use('/teacherRating',teacherRatingRoutes);
 router.use('/forum',forumRoutes);
 router.use('/thread',threadRoutes)
+router.use('/threadComment',threadCommentRoutes);
+router.use('/general',generalRoutes);
 //
 
 //combine all routes
