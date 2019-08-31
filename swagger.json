@@ -52,6 +52,9 @@
     },
     "course/getCourseByCourseId/{courseId}": {
       "get": {}
+    },
+    "course/getCourseBySchoolNum/{schoolNum}": {
+      "get": {}
     }
 
   }
