@@ -8,6 +8,7 @@ exports.comment_teacher_by_teacherId = (req,res,next)=>{
     const teacherRatingModel = new teacherRating({
         _id: new mongoose.Types.ObjectId(),
         comment: req.body.comment,
+        name: req.body.name,
         rate: req.body.rate,
         teacherId: req.body.teacherId
     });
