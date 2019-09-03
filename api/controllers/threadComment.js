@@ -3,12 +3,23 @@ const threadComment = require('../models/threadComment');
 const {Result} = require('../models/result');
 
 
-exports.get_threadComment_by_threadId = (req,res,next) =>{
+exports.get_threadComment_by_threadId_byPageNum = async (req,res,next) =>{
     const result = new Result();
-    threadComment.find({"threadId":req.params.threadId})
+    const pageNum = Number(req.params.PageNum)
+    if (isNaN(pageNum) == true || pageNum <= 0){
+        result.IsSuccess =false;
+        result.ErrorMessage = "Page number is not a integer or zero or negative integer"
+        return res.status(200).json(result);
+    }
+    const total = await threadComment.countDocuments({'teacherId':req.params.threadId});
+    const totalPageNum = await Math.floor(total/10) + 1
+    threadComment
+        .find({"threadId":req.params.threadId})
+        .limit(10)
+        .skip((pageNum-1)*10)
         .exec()
         .then(docs=>{
-            result.Data = docs;
+            result.Data = {total: totalPageNum,skip: (pageNum-1)*10,details:docs}
             res.status(200).json(result)
         })
         .catch(err=>{
