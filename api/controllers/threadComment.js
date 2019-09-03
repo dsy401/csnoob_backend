@@ -11,7 +11,7 @@ exports.get_threadComment_by_threadId_byPageNum = async (req,res,next) =>{
         result.ErrorMessage = "Page number is not a integer or zero or negative integer"
         return res.status(200).json(result);
     }
-    const total = await threadComment.countDocuments({'teacherId':req.params.threadId});
+    const total = await threadComment.countDocuments({'threadId':req.params.threadId});
     const totalPageNum = await Math.floor(total/10) + 1
     threadComment
         .find({"threadId":req.params.threadId})
