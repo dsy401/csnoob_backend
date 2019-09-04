@@ -4,7 +4,6 @@
     <list default="true" id="3eb85e4d-276e-4a8e-9917-77e1e608fe9f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controllers/thread.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/thread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/thread.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/thread.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/api/controllers/thread.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
-              <caret line="68" column="85" lean-forward="true" selection-start-line="68" selection-start-column="85" selection-end-line="68" selection-end-column="85" />
+              <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -119,7 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,6 +152,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,12 +252,13 @@
       <workItem from="1567511007953" duration="176000" />
       <workItem from="1567511313114" duration="91000" />
       <workItem from="1567551371002" duration="986000" />
-      <workItem from="1567552420121" duration="6607000" />
+      <workItem from="1567552420121" duration="6644000" />
+      <workItem from="1567571871685" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77979000" />
+    <option name="totallyTimeSpent" value="78042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1856" y="31" width="1680" height="952" extended-state="0" />
@@ -535,7 +535,7 @@
     <entry file="file://$PROJECT_DIR$/api/controllers/thread.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
-          <caret line="68" column="85" lean-forward="true" selection-start-line="68" selection-start-column="85" selection-end-line="68" selection-end-column="85" />
+          <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
         </state>
       </provider>
     </entry>

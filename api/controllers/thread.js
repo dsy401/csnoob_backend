@@ -68,7 +68,8 @@ exports.get_all_threads_by_forumId_by_pageNum = async (req,res,next) =>{
                             lastThread:{
                                 name: s.threads.length ===0?"":s.threads[s.threads.length-1].name,
                                 _id: s.threads.length===0?"":s.threads[s.threads.length-1]._id,
-                            }
+                            },
+                            replyNum: s.threads.length
                         }
                     })
                 };
