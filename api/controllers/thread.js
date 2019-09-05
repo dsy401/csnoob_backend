@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const thread = require('../models/thread')
+const threadComment = require('../models/threadComment')
 const {Result} = require('../models/result')
 
 //分页
@@ -69,7 +70,7 @@ exports.get_all_threads_by_forumId_by_pageNum = async (req,res,next) =>{
                                 name: s.threads.length ===0?"":s.threads[s.threads.length-1].name,
                                 _id: s.threads.length===0?"":s.threads[s.threads.length-1]._id,
                             },
-                            replyNum: total
+                            replyNum: s.threads.length
                         }
                     })
                 };
@@ -107,12 +108,14 @@ exports.post_one_thread = (req,res,next)=>{
         })
 };
 
-exports.get_one_thread_by_thread_id = (req,res,next) =>{
+exports.get_one_thread_by_thread_id = async (req,res,next) =>{
     const result = new Result();
+    const total = await threadComment
+        .countDocuments({'threadId':req.params.threadId});
     thread.findOne({"_id":req.params.threadId})
         .exec()
-        .then(doc=>{
-            result.Data = doc;
+        .then(s=>{
+            result.Data = {_id:s._id,author:s.author,title:s.title,content:s.content,forumId:s.forumId,replyNum:total}
             res.status(200).json(result)
         })
         .catch(err=>{
