@@ -20,13 +20,14 @@ const forumRoutes = require('./api/routes/forum');
 const threadRoutes = require('./api/routes/thread');
 const threadCommentRoutes = require('./api/routes/threadComment');
 const generalRoutes = require('./api/routes/general')
+const dbconfig = require('./dbconfig')
 //
 
 const app = express();
 
 //connect database
 mongoose.connect(
-    'mongodb+srv://dsy401:dyfi6yth@csnoob-jouvh.mongodb.net/csnoob?retryWrites=true&w=majority',
+    'mongodb+srv://dsy401:'+dbconfig.PASSWORD  +'@csnoob-jouvh.mongodb.net/csnoob?retryWrites=true&w=majority',
     { useNewUrlParser: true,useFindAndModify: false,useCreateIndex: true}
 );
 
