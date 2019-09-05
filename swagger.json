@@ -50,12 +50,14 @@
     "/thread/{forumId}/{pageNum}": {
       "get": {}
     },
+    "getTeachersBySchoolNum/{schoolNum}": {
+      "get": {}
+    },
     "course/getCourseByCourseId/{courseId}": {
       "get": {}
     },
     "course/getCourseBySchoolNum/{schoolNum}": {
       "get": {}
     }
-
   }
 }
