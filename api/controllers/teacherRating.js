@@ -10,7 +10,9 @@ exports.comment_teacher_by_teacherId = (req,res,next)=>{
         comment: req.body.comment,
         name: req.body.name,
         rate: req.body.rate,
-        teacherId: req.body.teacherId
+        teacherId: req.body.teacherId,
+        semester: req.body.semester,
+        year: req.body.year
     });
     teacherRatingModel.save()
         .then(doc=>{
