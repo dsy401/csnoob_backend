@@ -6,8 +6,6 @@ const threadSchema = mongoose.Schema({
     title: {type: String,required:true},
     content: {type: String,required: true},
     forumId: {type: mongoose.Schema.Types.ObjectId,required:true},
-    LastThreadCommnetName: {type: String},
-    LastThreadCommentId: {type:mongoose.Schema.Types.ObjectId}
 });
 
 module.exports = mongoose.model('thread',threadSchema,'thread')
