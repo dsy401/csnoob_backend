@@ -68,7 +68,6 @@ router.use('/teacherRating',teacherRatingRoutes);
 router.use('/forum',forumRoutes);
 router.use('/thread',threadRoutes)
 router.use('/threadComment',threadCommentRoutes);
-router.use('/general',generalRoutes);
 //
 
 //combine all routes
@@ -89,5 +88,16 @@ app.use((error,req,res,next)=>{
     res.status(error.status || 500);
     res.json(result)
 })
+
+
+if (module === require.main) {
+
+    const server = app.listen(process.env.PORT || 8080, () => {
+        const port = server.address().port;
+        console.log(`App listening on port ${port}`);
+    });
+}
+
+
 
 module.exports = app;
